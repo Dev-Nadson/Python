@@ -33,20 +33,32 @@ def NamesList():
             print("That name isn't in the list, enter again.")
             Removed_Name = input("Enter the name to be removed: ")
         Names.remove(Removed_Name)
+        Names = list(Names)
+        print("\nUpdated list:")
         for i, Name in enumerate(Names): #Name = item, Names = List
-            print(f"Updated list: \n{i}: {Names}")
+            print(f"{i}: {Name}")        
     else:
-        print("Ok")
+        print("ok")
+    change = input("Do you want to change some name? \nanswer with 'yes' or 'no': ")
+    if change == "yes":
+        i = int(input("Enter the index position of the name: "))
+        Names[i] = input("Enter the new name: ") 
+        print("\nUpdated list:") 
+        for i, Name in enumerate(Names): #Name = item, Names = List
+            print(f"{i}: {Name}")   
+    else:
+        print("ok")     
+
 
 def error():
     print("Invalid option.")
 
 opcoes = {
-    'um': Multiplication,
-    '2': Palindrome,
-    '3': NamesList
+    1: Multiplication,
+    2: Palindrome,
+    3: NamesList
 }
 
 print("1. Multiplication Table \n2. Palindrome Test \n3. Names List")
-Op = (input("Insert the option: "))
+Op = int(input("Insert the option: "))
 opcoes.get(Op, error)()
