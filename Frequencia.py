@@ -1,4 +1,5 @@
 from collections import Counter
+print("--- This algorithm counts the most frequent number in a list ---")
 Frq = input("Enter the list: ").split(",") #Split ignora as vírgulas
 List = list(Frq)
 Cont = Counter(List)
