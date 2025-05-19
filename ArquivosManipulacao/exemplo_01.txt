@@ -1,0 +1,6 @@
+testando as manipulações de arquivos em pyhton
+teste linhas
+
+paragrafo
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaa
