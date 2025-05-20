@@ -12,7 +12,6 @@ for i in range(len(txt)):
     NewText = list(txt[i].split())
     if "\n" in NewText:
         NewText.remove("\n")
-    print(NewText)
     for char in NewText:
         ContChar += len(char)
     TextFull += NewText
