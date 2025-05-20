@@ -5,13 +5,14 @@ ContWord = 0
 cont = []
 TextFull = []
 
-with open ("C:/Users/Ana Julia/Desktop/PRO-git/Python/ArquivosManipulacao/exemplo_01.txt", "r", encoding="utf-8") as arquivo:
+with open ("C:/Users/Ana Julia/Desktop/PRO-git/Python/ArquivosManipulacao/exemplo_03.txt", "r", encoding="utf-8") as arquivo:
     txt = arquivo.readlines()
 
 for i in range(len(txt)):
-    NewText = list(txt[i].split(" "))
+    NewText = list(txt[i].split())
     if "\n" in NewText:
         NewText.remove("\n")
+    print(NewText)
     for char in NewText:
         ContChar += len(char)
     TextFull += NewText
@@ -20,8 +21,10 @@ ContWord += len(TextFull)
 cont = Counter(TextFull)
 cont = cont.most_common(1)
 
-print("The text is: ")
+print("The text is: \n")
 for i in txt:
+    if "\n" in i:
+        i = i.replace("\n", " ")
     print(f'{i}')
 
 print(f"\nThe number of words: {ContWord}")
