@@ -22,6 +22,3 @@ def apend(): #Modo Adição, atualiza o arquvio
         txt = archive.readlines()
     for content in txt:
         print(f"{content}")
-
-apend()
-        
