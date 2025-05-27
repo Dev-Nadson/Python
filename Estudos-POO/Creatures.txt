@@ -1,1 +1,3 @@
-('teste 01', '12', '13')('Jason', '50', '37')('Andrew', ' 87', '12')('Matthew', '23', '89')
+Name: jujuba, Life: 23, Damage: 24
+Name: jujuba, Life: 12, Damage: 13
+Name: alex, Life: 34, Damage: 35
