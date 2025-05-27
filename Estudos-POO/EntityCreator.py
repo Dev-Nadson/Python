@@ -16,3 +16,6 @@ while True:
     All_Data.append(character)
 
 print(All_Data)
+with open ("./Estudos-POO/Creatures.txt", "a") as Data:
+    for i in All_Data:
+        Data.write(str(i))
