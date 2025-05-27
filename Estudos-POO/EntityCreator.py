@@ -4,18 +4,18 @@ class Characters:
         self.Life = Life
         self.Damage = Damage
 
-All_Data = []
+    def __str__(self):
+        return f"Name: {self.Name}, Life: {self.Life}, Damage: {self.Damage}\n" #Formata o obj como string
+
+    def Export(character):
+        with open ("./Estudos-POO/Creatures.txt", "a") as Data:
+            Data.write(str(character))
+
 while True:
     Name = input("Enter the name of the character: ")
     if Name == "-1":
         break
-    Life = input("Enter the life of the character")
-    Damage = input("Enter the damage of the character")
+    Life = input("Enter the life of the character: ")
+    Damage = input("Enter the damage of the character: ")
     character = Characters(Name, Life, Damage)
-    character = character.Name, character.Life, character.Damage
-    All_Data.append(character)
-
-print(All_Data)
-with open ("./Estudos-POO/Creatures.txt", "a") as Data:
-    for i in All_Data:
-        Data.write(str(i))
+    Characters.Export(character)
