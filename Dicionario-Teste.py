@@ -1,5 +1,4 @@
 import os
-
 def Create(type):
     i = 0
     CharacterString = []
@@ -8,14 +7,10 @@ def Create(type):
         nome = input(f"Enter the name of {i}º {type}: ")
         vida = input(f"Enter the life of {i}º {type}: ")
         dano = input(f"Enter the damage of {i}º {type}: ")
-        character = {
-            'Name': nome,
-            'Life': vida,
-            'Damage': dano
-        }
+        character = {'Name': nome, 'Life': vida, 'Damage': dano}
         CharacterString.append(character)
-        control = int(input("Enter any number to continue, or press 1 to stop: "))  
-        if control == 1:
+        ctrl = int(input("Enter any number to continue, or press 1 to stop: "))  
+        if ctrl == 1:
             break
     return CharacterString
 
@@ -38,5 +33,4 @@ while control != "1":
     CharacterS += Create(type)
     ShowChar(CharacterS, type)
     control = input("\nDo you want to continue creating entities? Enter 1 to stop: ")
-
-print(CharacterS)
+print(f"{CharacterS}")
