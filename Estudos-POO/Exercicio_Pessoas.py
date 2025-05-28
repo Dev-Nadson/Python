@@ -22,5 +22,4 @@ person = People("Pedro", "17", "1.75")
 print(person)
 
 rectangle = Rectangle(10, 10)
-print(f"{rectangle} ", end="")
-print(f"{rectangle.area()}")
+print(f"{rectangle}, {rectangle.area()}")
