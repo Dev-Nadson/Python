@@ -17,7 +17,7 @@ class Rectangle:
     
     def __str__(self):
         return f"Width: {self.width}, Height: {self.height}"
-
+    
 person = People("Pedro", "17", "1.75")
 print(person)
 
