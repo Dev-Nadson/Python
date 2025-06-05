@@ -18,6 +18,9 @@ class User(base):
         self.name = name
         self.status = status
 
+    def __str__(self):
+        return f"ID: {self.id}\nName: {self.name}\nStatus: {self.status}"
+
 class Book(base):
     __tablename__ = "books"
     
@@ -32,3 +35,12 @@ class Book(base):
         self.status = status
         
 base.metadata.create_all(bind=DataBase)
+
+# CRUD = Create/ Read/ Update/ Delete
+
+user = User("Joseph3")
+session.add(user)
+session.commit()
+
+users_list = session.query(User).all()
+print(users_list)
