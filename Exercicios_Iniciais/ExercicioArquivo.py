@@ -5,7 +5,7 @@ ContWord = 0
 cont = []
 TextFull = []
 
-with open ("C:/Users/Ana Julia/Desktop/PRO-git/Python/ArquivosManipulacao/exemplo_03.txt", "r", encoding="utf-8") as arquivo:
+with open ("./ArquivosManipulacao/exemplo_03.txt", "r", encoding="utf-8") as arquivo:
     txt = arquivo.readlines()
 
 for i in range(len(txt)):
