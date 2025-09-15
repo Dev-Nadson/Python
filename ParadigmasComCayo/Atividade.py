@@ -164,54 +164,53 @@ def ManagementSystem():
         else:
             print("Opção inválida.")
 
-def main():
-    while True:
-        print("""
-======== MENU PRINCIPAL ========
-1 - Números (Questão 1)
-2 - Nomes e idades (Questão 2)
-3 - Área do círculo (Questão 3)
-4 - Fatorial (Questão 4)
-5 - Fibonacci (Questão 5)
-6 - Operações com math (Questão 6)
-7 - Lançar dados (Questão 7)
-8 - Divisão com exceções (Questão 8)
-9 - Módulo par/ímpar/primo (Questão 9)
-10 - Sistema de gerenciamento (Questão 10)
+
+while True:
+    print("""
+-------- MENU PRINCIPAL --------
+1 - Números 
+2 - Nomes e idades 
+3 - Área do círculo 
+4 - Fatorial 
+5 - Fibonacci 
+6 - Operações com math 
+7 - Lançar dados 
+8 - Divisão com exceções 
+9 - Módulo par/ímpar/primo 
+10 - Sistema de gerenciamento
 0 - Sair
+--------------------------------
 """)
 
-        opcao = input("Escolha uma opção: ")
+    opcao = input("Escolha uma opção: ")
 
-        match opcao:
-            case "1":
-                num = int(input("Digite o primeiro número: "))
-                print(Numbers(num))
-            case "2":
-                print(Names())
-            case "3":
-                for vezes in range(3):
-                    raio = int(input(f"Digite o {vezes+1}º raio: "))
-                    print(f"A área é: {CircleArea(raio)}")
-            case "4":
-                num = int(input("Digite um número: "))
-                print(Fatorial(num))
-            case "5":
-                Fibonatty()
-            case "6":
-                print(Operations())
-            case "7":
-                RollDice()
-            case "8":
-                DivisionWithExeptions()
-            case "9":
-                Module()
-            case "10":
-                ManagementSystem()
-            case "0":
-                print("Programa Encerrado")
-                break
-            case _:
-                print("Opção inválida. Tente novamente.")
-
-main()
+    match opcao:
+        case "1":
+            num = int(input("Digite o primeiro número: "))
+            print(Numbers(num))
+        case "2":
+            print(Names())
+        case "3":
+            for vezes in range(3):
+                raio = int(input(f"Digite o {vezes+1}º raio: "))
+                print(f"A área é: {CircleArea(raio)}")
+        case "4":
+            num = int(input("Digite um número: "))
+            print(Fatorial(num))
+        case "5":
+            Fibonatty()
+        case "6":
+            print(Operations())
+        case "7":
+            RollDice()
+        case "8":
+            DivisionWithExeptions()
+        case "9":
+            Module()
+        case "10":
+            ManagementSystem()
+        case "0":
+            print("Programa Encerrado")
+            break
+        case _:
+            print("Opção inválida. Tente novamente.")
