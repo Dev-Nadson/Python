@@ -58,7 +58,7 @@ def Fibonatty():
 
     while True:
         i = int(input("Digite um número ou um menor que um para encerrar: "))
-        if i <= "0":
+        if i <= 0:
             break
         print(f"O {i}º termo da sequência de Fibonacci é: {fib(i)}")
 
@@ -69,15 +69,15 @@ def Operations():
     return f"Raiz quadrada de 144: {raiz}\nLogaritmo natural de 10: {logaritmo}\nCosseno de 60 graus: {cosseno}"
 
 def RollDice():
-    lancamentos = [random.randint(1, 6) for _ in range(10)]
+    lancamentos = [random.randint(1, 6) for vezes in range(10)]
     lancamentos.sort(reverse=True)
     repeticoes = {}
     for n in lancamentos:
         repeticoes[n] = repeticoes.get(n, 0) + 1
     print(f"Lançamentos: {lancamentos}")
-    for k, v in repeticoes.items():
-        if v > 1:
-            print(f"O número {k} apareceu {v} vezes")
+    for num, qtdeVezes in repeticoes.items():
+        if qtdeVezes > 1:
+            print(f"O número {num} apareceu {qtdeVezes} vezes")
 
 def DivisionWithExeptions():
     while True:
@@ -108,7 +108,7 @@ def Module():
         return f"O número {n} é {isPar} e {'primo' if primo else 'não primo'}"
     
     for vezes in range(5):
-        n = int(input("Digite um número: "))
+        n = int(input(f"Digite o {vezes+1}º número de 5: "))
         print(check_number(n))
 
 def ManagementSystem():
@@ -190,8 +190,9 @@ def main():
             case "2":
                 print(Names())
             case "3":
-                raio = int(input("Digite o raio: "))
-                print(CircleArea(raio))
+                for vezes in range(3):
+                    raio = int(input(f"Digite o {vezes+1}º raio: "))
+                    print(f"A área é: {CircleArea(raio)}")
             case "4":
                 num = int(input("Digite um número: "))
                 print(Fatorial(num))
