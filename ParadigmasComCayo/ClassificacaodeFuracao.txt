@@ -15,4 +15,4 @@ def classificar(velocidade):
     return "Velocidade inválida" if velocidade < 0 else "Furacão de categoria 5"
 
 velocidade = int(input("Insira a velocidade do vento durante a tesmpestade: "))
-print(f"Classificação: {classificar(velocidade)}")
+print(f"Essa é a classificação: {classificar(velocidade)}")
