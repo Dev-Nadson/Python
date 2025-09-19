@@ -1,7 +1,7 @@
 import math
 import random
 
-def Numbers(num): #feito!
+def Numbers(num): 
     list = []
     maior = num
     menor = num
@@ -43,7 +43,7 @@ Menores de 15: {menores15}
 def CircleArea(radius): 
     return math.pi * (radius**2)
 
-def Fatorial(num): #corrigido!
+def Fatorial(num): 
     if num < 0:
         return "Erro"
     if num in (0, 1):
