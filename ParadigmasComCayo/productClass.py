@@ -58,6 +58,17 @@ def create_product(typeProduct):
     print(EletronicProduct.show_products(Produto_01))
     actions(Produto_01)
 
+def show_description(classs):
+    class_name = classs.__class__.__name__
+    desc = input("Deseja ver a descrição do produto? (s/n): ")
+    if desc in ("s", "S"):
+      if class_name == "FoodProduct":
+          print(f"Produto Alimentício: {classs.name}, validade {classs.expiration_date}")
+      elif class_name == "EletronicProduct":
+          print(f"Produto Eletrônico: {classs.name}, garantia de {classs.warranty} meses")
+      elif class_name == "Product":
+          print(f"Produto: {classs.name}, preço R${classs.price}")
+
 def actions(classs):
   option = input(("Houve venda de produto? (s/n):"))
   if option in ("s", "S"):
@@ -71,15 +82,15 @@ def actions(classs):
     classs.reset(qtd)
     print(classs.show_products())
 
-def show_description():
-  pass
+  show_description(classs)
+
 while True:
   print("-=== Escolha o tipo do produto ===-")
   print("1 - Produto Comum")
   print("2 - Alimento")
   print("3 - Eletrônico")
   print("4 - Sair")
-  print("-==============================-")
+  print("-=================================-")
   typeProduct = int(input("Digite o tipo do produto: "))
   if typeProduct in (1, 2, 3):
     create_product(typeProduct)
