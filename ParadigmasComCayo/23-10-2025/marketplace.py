@@ -74,14 +74,15 @@ class organizer(user):
     def list_courses(courses):
         print(courses)
         for course in courses:
-            print(f"Curso: Carga Horária: {course.workload}, Preço: {course.price}, Aulas: {course.classes}")
+            print(f"Curso: {course.name} Carga Horária: {course.workload}, Preço: {course.price}, Aulas: {course.classes}")
 
     def create_course():
+        name = input("Digite o nome do curso: ")
         workload = input("Digite a carga horária do curso: ")
         price = float(input("Digite o preço do curso: "))
         classes = input("Digite as aulas do curso: ")
 
-        new_course = course(workload, price, classes)
+        new_course = course(name, workload, price, classes)
         return new_course
 
 #Classes de pagamento
@@ -110,13 +111,12 @@ class bank_slip(payment):
 
 #Classes de curso
 class course():
-    def __init__(self, workload, price, classes):
+    def __init__(self, name, workload, price, classes):
+        self.name = name
         self.price = price
         self.workload = workload
         self.classes = classes
-
-    def __str__(self): #adicionar em várias classes
-        pass
+        return self.name, self.price, self.workload, self.classes
 
 class registration():
     def __init__(self, user, course):
@@ -142,7 +142,7 @@ def menu():
 
         if option == 1:
             course = organizer.create_course()
-            print(course)
+            courses.append(course)
 
         if option == 2:
             users.append(teacher.register_user())    
